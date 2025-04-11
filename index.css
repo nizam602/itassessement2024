@@ -1,0 +1,124 @@
+/* Reset some styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Background image */
+  body {
+    background-image: url('bg.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+  }
+  
+  /* Header styling */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+    padding: 15px 30px;
+  }
+  
+  .logo {
+    width: 120px;
+  }
+  
+  .nav-links li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    padding: 0px 0px;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-links li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background:   #ffcc00; /* secondary yellow */;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-out;
+}
+
+.nav-links li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+  /* Main content overlay */
+  .overlay {
+    height: calc(100vh - 145px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+  }
+  
+  .overlay h1 {
+    font-size: 3rem;
+    color: #ffcc00; /* secondary yellow */
+  }
+  
+  .overlay p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  
+  /* Footer styling */
+  footer {
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .logo {
+      display: none;
+    }
+  
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+  
+    .nav-links a {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .overlay h1 {
+      font-size: 2rem;
+    }
+  }
+  
