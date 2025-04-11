@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery</title>
+  <link rel="stylesheet" href="gallery.css"/>
+ 
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Mobile Shop Logo" class="logo" />
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="latest.html">Latest</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="gallery">
+    <!-- Sample Images -->
+    <img src="image1---sony.avif" alt="Mobile 1" class="gallery-img">
+    <img src="image2---redmi_note11.jpeg" alt="Mobile 2" class="gallery-img">
+    <img src="image3 xoami10.jpeg" alt="Mobile 3" class="gallery-img">
+    <img src="image4-- xoami15.jpeg" alt="Mobile 4" class="gallery-img">
+    <img src="image5 realmeC61.jpeg" alt="Mobile 5" class="gallery-img">
+    <img src="image6 realme c11.jpeg" alt="Mobile 6" class="gallery-img">
+    <img src="image7 realmi9.jpeg" alt="Mobile 6" class="gallery-img">
+    <img src="image8 iphone 15.jpeg" alt="Mobile 6" class="gallery-img">
+    <img src="image9 iphone 13.jpeg" alt="Mobile 6" class="gallery-img">
+    <img src="iamge11 samsung z flip.jpeg" alt="Mobile 6" class="gallery-img">
+  </main>
+
+  <!-- Fullscreen viewer -->
+  <div id="fullscreen-viewer">
+    <span id="close-btn">&times;</span>
+    <img id="fullscreen-img" src="" alt="Full View">
+  </div>
+  <script>
+    // Select all images and the fullscreen container
+const images = document.querySelectorAll('.gallery-img');
+const fullscreen = document.getElementById('fullscreen-viewer');
+const fullscreenImg = document.getElementById('fullscreen-img');
+const closeBtn = document.getElementById('close-btn');
+
+// Show full image when clicked
+images.forEach(img => {
+  img.addEventListener('click', () => {
+    fullscreen.style.display = 'flex';
+    fullscreenImg.src = img.src;
+    fullscreenImg.alt = img.alt;
+  });
+});
+
+// Close fullscreen viewer
+closeBtn.addEventListener('click', () => {
+  fullscreen.style.display = 'none';
+  fullscreenImg.src = '';
+});
+
+  </script>
+
+  
+  <footer>
+    <p>&copy; 2025 Nizam Mobile. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
